@@ -1,0 +1,47 @@
+       {% extends "site/layouts/base.html" %}
+
+{% block title %}  {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+ <!-- Main News Start-->
+        <div class="main-news m-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="row">
+                            {% for l in main_list %}
+                                <div class="col-md-4">
+                                    <div class="mn-img">
+                                        <img src="{{ MEDIA_URL }}/media/{{ l.image }}" />
+                                        <div class="mn-title">
+                                            <a href="news/{{ l.id }}">{{ l.title }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="mn-list">
+                            <h3>Читать больше</h3>
+                            <ul>
+                                {% for l in other_list  %}
+                                    <li><a href="news/{{ l.id }}">{{ l.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

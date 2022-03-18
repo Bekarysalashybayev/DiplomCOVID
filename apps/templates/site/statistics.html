@@ -1,0 +1,21 @@
+       {% extends "site/layouts/base.html" %}
+
+{% block title %}  {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div>$data_info</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script type="text/javascript">
+    let covid_data = $covid_data
+// ...
+</script>
+{% endblock javascripts %}

@@ -1,0 +1,1337 @@
+       {% extends "site/layouts/base.html" %}
+
+{% block title %}  {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+            <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                    <li class="breadcrumb-item active">Вопросы-ответы</li>
+                </ul>
+            </div>
+        </div>
+
+
+ <script src="/lenta/js/jquery-1.11.3.min.js"></script>
+    <style>
+
+        .article_left_block {
+            max-width: 100% !important;
+        }
+        .left_main_block {
+            max-width: 340px !important;
+        }
+        .right_main_block {
+            max-width: 750px !important;
+        }
+        .main_container {
+            max-width: 1100px !important;
+        }
+        @media(min-width: 768px) and (max-width: 1150px) {
+            .left_main_block {
+                max-width: calc(35% - 10px) !important;
+            }
+            .right_main_block {
+                max-width: 65% !important;
+            }
+        }
+    </style>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18014960-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-18014960-3');
+    </script>
+
+
+
+<style>
+    .inst_applic_block { width: 100%; position: absolute; top: 0; left: 0; z-index: 999999; }
+    .inst_applic_block img { width: 100%; cbox-shadow: 0px 3px 10px 0px rgba(0,0,0,0.2); }
+</style>
+<style>
+
+	.title_quest {font-size: 26px; margin-left: 28px; color: #003d96; text-transform: uppercase; clear: both; }
+	.block_quest { border: 1px solid #eeeeee; padding: 10px; margin: 10px 30px 10px 30px; font-size: 18px; clear: both; }
+	.block_quest img {margin: 7px;}
+    .question { margin-bottom: 10px; font-weight: bold; color: #003d96; }
+    .answer { color: #5a5a5a; }
+
+	.wrap_cont_import {
+		margin: 110px auto 50px;
+		max-width: 1400px;
+	}
+	.wrap_cont_import .title_quest {
+		margin-top: 25px;
+	}
+	.block_quest {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.block_quest img {
+		width: 100%;
+	}
+	.block_quest > div {
+		width: 23%;
+		margin-right: 2%;
+	}
+	@media(max-width:700px) {
+		.wrap_cont_import {
+			margin-top: 200px !important;
+		}
+		.menu_fixed_block {
+			top: -200px !important;
+		}
+		.block_quest > div {
+			width: 48%;
+			margin-right: 2%;
+		}
+
+	}
+
+
+</style>
+
+	<style>
+		.wrapper_all_content .wrap_cont_import {
+			margin-top: 210px !important;
+		}
+		.important_fix_menu {
+			position: fixed;
+			top: 105px;
+			left: 0;
+			width: 100%;
+			background: rgba(255, 255, 255, .95);
+			border-top: 1px solid #c10001;
+			padding: 5px 0;
+		}
+		.important_fix_menu ul {
+			text-align: center;
+		}
+		.important_fix_menu li {
+			display: inline-block;
+			padding: 5px 10px;
+		}
+		.menu_bl_fix {
+			padding-bottom: 0 !important;
+		}
+		.important_fix_menu a {
+			color: #003d90;
+		}
+		.important_fix_menu a:hover {
+			text-decoration: underline;
+		}
+		@media(max-width:900px) {
+			.important_fix_menu {
+				/*display: none;*/
+				top: 90px;
+			}
+		}
+		@media(max-width:850px) {
+			.important_fix_menu {
+				top: 70px;
+			}
+		}
+		@media(max-width:700px) {
+			.wrapper_all_content .menu_fixed_block {
+				top: -400px !important;
+			}
+			.important_fix_menu {
+				position: absolute;
+				top: -225px;
+			}
+			.wrapper_all_content .wrap_cont_import {
+				margin-top: 400px !important;
+			}
+			.important_fix_menu li {
+				line-height: 1;
+			}
+		}
+	</style>
+
+<div class="wrap_cont_import">
+    <div style="display: none !important;" id="bl_1" class="title_quest"> Информация о чрезвычайном положении </div>
+    <div style="display: none !important;" class="block_quest lightgallery">
+
+
+		    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/1/1_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/1/1_ru.jpg" alt=""></div>
+
+
+
+		    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/1/2_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/1/2_ru.jpg" alt=""></div>
+
+
+
+		    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/1/3_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/1/3_ru.jpg" alt=""></div>
+
+
+
+		    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/1/4_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/1/4_ru.jpg" alt=""></div>
+
+
+
+			</div>
+
+
+	<div style="display: none !important;" id="bl_2" class="title_quest">Информация о карантине в г.Нур-Султан и Алматы</div>
+	<div style="display: none !important;" class="block_quest lightgallery">
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/1_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/1_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/2_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/2_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/3_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/3_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/4_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/4_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/5_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/5_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/6_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/6_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/7_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/7_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/8_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/8_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/9_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/9_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/10_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/10_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/11_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/11_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/12_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/12_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/13_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/13_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/14_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/14_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/15_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/15_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/16_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/2/16_ru.jpg" alt=""></div>
+
+
+
+
+		    </div>
+
+<div id="bl_8" class="title_quest">АКТУАЛЬНАЯ ИНФОРМАЦИЯ ПО СИТУАЦИИ С КВИ</div>
+<div class="block_quest lightgallery">
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/1_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/1_ru.jpg?v=3" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/2_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/2_ru.jpg?v=3" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/3_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/3_ru.jpg?v=3" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/4_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/4_ru.jpg?v=3" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/5_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/5_ru.jpg?v=3" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/6_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/6_ru.jpg?v=3" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/7_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/7_ru.jpg?v=3" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/8_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/8_ru.jpg?v=3" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/9_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/9_ru.jpg?v=3" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/10_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/10_ru.jpg?v=3" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/11_ru.jpg?v=3"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/actual/11_ru.jpg?v=3" alt=""></div>
+
+
+
+
+	</div>
+
+
+<div id="bl_9" class="title_quest">Вакцинация</div>
+<div class="block_quest lightgallery">
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/1_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/1_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/2_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/2_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/3_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/3_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/4_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/4_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/5_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/5_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/6_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/6_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/7_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/7_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/8_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/8_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/9_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/9_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/10_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/10_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/11_ru.jpg?v=2"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/vactination/11_ru.jpg?v=2" alt=""></div>
+
+
+
+
+	</div>
+
+<div id="bl_3" class="title_quest">Памятки по коронавирусу</div>
+<div class="block_quest lightgallery">
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/1_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/1_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/2_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/2_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/3_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/3_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/4_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/4_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/5_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/5_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/6_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/6_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/7_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/7_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/8_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/8_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/9_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/9_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/10_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/10_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/11_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/11_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/12_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/12_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/13_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/13_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/14_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/14_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/15_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/15_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/16_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/16_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/17_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/17_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/18_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/18_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/19_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/19_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/20_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/20_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/21_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/21_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/22_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/22_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/23_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/23_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/24_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/24_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/25_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/25_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/26_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/26_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/27_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/27_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/28_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/28_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/29_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/29_ru.jpg" alt=""></div>
+
+
+
+
+
+		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/30_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/3/30_ru.jpg" alt=""></div>
+
+
+
+
+	</div>
+
+    <div id="bl_4" class="title_quest">Профилактика коронавируса</div>
+	<div class="block_quest lightgallery">
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/1_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/1_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/2_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/2_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/3_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/3_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/4_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/4_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/5_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/5_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/6_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/6_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/7_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/7_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/8_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/8_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/9_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/9_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/10_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/10_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/11_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/11_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/12_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/12_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/13_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/13_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/14_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/14_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/15_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/15_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/16_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/16_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/17_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/17_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/18_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/18_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/19_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/19_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/20_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/20_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/21_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/21_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/22_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/22_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/23_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/23_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/24_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/24_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/25_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/25_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/26_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/26_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/27_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/27_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/28_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/28_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/29_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/29_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/30_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/30_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/31_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/31_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/32_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/32_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/33_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/33_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/34_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/34_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/35_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/35_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/36_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/36_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/37_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/37_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/38_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/38_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/39_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/39_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/40_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/40_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/41_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/41_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/42_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/42_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/43_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/43_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/44_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/44_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/45_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/45_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/46_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/46_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/47_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/47_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/48_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/48_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/49_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/4/49_ru.jpg" alt=""></div>
+
+
+
+
+			</div>
+
+    <div id="bl_8" class="title_quest">Тактика лечения COVID-19 на амбулаторном уровне</div>
+	<div class="block_quest lightgallery">
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/1_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/1_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/2_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/2_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/3_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/3_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/4_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/4_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/5_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/5_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/6_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/6_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/7_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/7_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/8_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/8_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/9_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/8/9_ru.jpg" alt=""></div>
+
+
+
+
+			</div>
+
+	<div id="bl_5" class="title_quest">Дополнительные памятки по коронавирусу</div>
+	<div class="block_quest lightgallery">
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/1_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/1_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/2_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/2_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/3_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/3_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/4_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/4_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/5_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/5_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/6_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/6_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/7_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/7_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/8_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/8_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/9_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/5/9_ru.jpg" alt=""></div>
+
+
+
+
+			</div>
+
+	<div id="bl_9" class="title_quest">Все о вакцине Hayat-Vax</div>
+	<div class="block_quest lightgallery">
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/1_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/1_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/2_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/2_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/3_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/3_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/4_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/4_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/5_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/5_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/6_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/6_ru.jpg" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/7_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/9/7_ru.jpg" alt=""></div>
+
+
+
+
+			</div>
+
+    <div id="bl_6" class="title_quest">Контакт-центры</div>
+	<div class="block_quest del_con">
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/6/1_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/6/1_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/6/2_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/6/2_ru.jpg?v=2" alt=""></div>
+
+
+
+
+
+    		<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/6/3_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/6/3_ru.jpg?v=2" alt=""></div>
+
+
+
+
+			</div>
+
+	<div style="display: none !important;" id="bl_7" class="title_quest">Правила поведения в период чрезвычайного положения</div>
+	<div style="display: none !important;" class="block_quest lightgallery">
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/1_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/1_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/2_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/2_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/3_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/3_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/4_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/4_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/5_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/5_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/6_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/6_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/7_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/7_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/8_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/8_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/9_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/9_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/10_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/10_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/11_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/11_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/12_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/12_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/13_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/13_ru.jpg" alt=""></div>
+
+
+
+
+
+			<div data-src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/14_ru.jpg"><img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/articles_important/visual/7/14_ru.jpg" alt=""></div>
+
+
+
+
+			</div>
+
+
+
+</div>
+
+
+<div style="position:fixed; bottom:10px; right:10px; cursor:pointer; display:none;" id="gotoUp"><img style="width:35px;" src="/lenta/img/up.png" alt=""></div>
+
+<script>
+	var gotoUp = $('#gotoUp');
+	gotoUp.on('click', function(ev) {
+		$('html, body').animate({'scrollTop':0}, '500');
+	});
+	$(window).scroll(function(){
+		gotoUp['fade'+ ($(this).scrollTop() > 300 ? 'In': 'Out')](200);
+	});
+</script>
+
+
+
+	<link rel="stylesheet" href="/lenta/css/lightgallery.css?v=2">
+	<!--<link rel="stylesheet" href="https://www.inform.kz/lenta/nauryz/css/owl.carousel.min.css">-->
+	<style>
+		.lg-backdrop, .lg-outer {
+			z-index: 999999999;
+		}
+		#lg-share, #lg-counter, #lg-progress-bar, .lg-autoplay-button, .lg-fullscreen, #lg-zoom-in, #lg-zoom-out, #lg-actual-size {
+			display: none;
+		}
+	</style>
+
+
+	<!--<script src="https://www.inform.kz/lenta/nauryz/js/owl.carousel.min.js"></script>-->
+	<script src="https://www.inform.kz/lenta/nauryz/js/lightgallery-all.min.js"></script>
+	<script src="https://www.inform.kz/lenta/nauryz/js/picturefill.min.js"></script>
+	<script>
+			$(function(){
+				$('.lightgallery').lightGallery();
+				/*$('.owl-carousel').owlCarousel({
+					nav:true,
+					items: 4,
+					margin: 10,
+					responsive: {
+						991 : { items: 4 },
+						768 : { items: 3 },
+						480 : { items: 2 },
+						0 : { items: 1 }
+						}
+				});*/
+			})
+		</script>
+
+
+        <!-- --------------------------------------------------------------------------------------- -->
+
+        <footer>
+
+            <div class="footer_block">
+                <img src="https://www.coronavirus2020.kz/lenta/img/lenta-virus/79-16.jpg" alt="">
+                            </div>
+        </footer>
+
+    </DIV>
+    <style>
+        .spec_project_block { position: relative; }
+        .spec_button { color: #fff; cursor: pointer; line-height: 28px; }
+        .spec_project_block > ul { width: 640px; position: absolute; top: 25px; left: -245px;
+            background-color: #fff; overflow: hidden; z-index: 9999; max-height: 0; transition: max-height 300ms ease-out; display: flex;
+        }
+        .spec_button:hover + ul {
+            max-height: 1000px;
+            transition: max-height 300ms ease-in;
+            border: 1px solid #133d8b;
+            top: 24px;
+        }
+        .spec_button + ul:hover {
+                max-height: 1000px;
+                border: 1px solid #133d8b;
+                top: 24px;
+        }
+        .list_menu_spec > li li {
+                padding: 5px 10px;
+                line-height: 1.2;
+                font-weight: normal !important;
+                font-size: 13px;
+        }
+        .spec_project_block > ul a { color: #133d8b; font-weight: bold; }
+        .spec_project_block > ul a:hover { text-decoration: underline; }
+        .wrapper_all_content > nav { overflow: visible !important; }
+        .list_menu_spec > li { width: calc(100% / 3); border-right: 1px solid #133d8b; }
+        .list_menu_spec > li:last-child { border-right: none; }
+        .list_menu_spec ul { margin: 8px 0; }
+        @media(max-width:1199px) {
+                .wrapper_all_content > nav { overflow: hidden !important; }
+        }
+    </style>
+
+
+    <script type="text/javascript">
+
+        $("a[href*=#]").on("click", function(e){
+            var anchor = $(this);
+            $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top - 170
+            }, 300);
+            e.preventDefault();
+            return false;
+        });
+
+
+        $("#load-archive").click(function() {
+            last_id = $(document).find('.last_id:last').data('id');
+            show_more = $(this);
+            show_more.hide();
+            $('.load_gif').fadeIn();
+
+            param = '?';
+            if (window.location.href.indexOf('?') > -1) {
+                param = '&';
+            }
+
+            $.get(window.location.href + param + "last_id=" + last_id, function(data){
+                $('#lenta').append(data);
+                $('.load_gif').fadeOut();
+                show_more.fadeIn();
+            });
+
+        });
+
+
+    </script>
+{% endblock content %}
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

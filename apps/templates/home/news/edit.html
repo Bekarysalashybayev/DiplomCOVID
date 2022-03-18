@@ -1,0 +1,195 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Товары {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+	<div class="content">
+		<div class="page-inner">
+			<div class="page-header">
+				<h4 class="page-title">Новости</h4>
+				<ul class="breadcrumbs">
+					<li class="nav-home">
+						<a href="#">
+							<i class="flaticon-home"></i>
+						</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Новости</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Изменить</a>
+					</li>
+				</ul>
+			</div>
+            {% if error %}
+                 <div class="alert alert-danger" role="alert" style="    background-color: #F25961; color: #1a2035;">
+                      {{ error }}
+                 </div>
+            {% endif %}
+			<form class="row" method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Данные</div>
+						</div>
+						<div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-group">
+										<label for="last_name">Название</label>
+										<input type="text" class="form-control"
+                                               name="title"
+                                               id="last_name"
+                                               value="{{ blog.title }}"
+                                               placeholder="Название"
+                                               required>
+									</div>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6">
+									<div class="form-group">
+										<label for="comment">Описание</label>
+										<textarea class="form-control"
+                                                  id="comment" rows="5"
+                                                  name="description" required>
+                                            {{ blog.description }}
+										</textarea>
+									</div>
+                                </div>
+                            </div>
+						</div>
+						<div class="card-body">
+                             <div class="row">
+                                <div class="col-md-6">
+									<div class="form-group">
+										<label for="exampleFormControlFile2">Изображение</label>
+                                        <figure class="imagecheck-figure" id="previewPhoto1">
+                                            <img id="blah1" src="{{MEDIA_URL}}/media/{{ blog.image }}" alt="title" class="imagecheck-image">
+                                        </figure>
+										<input type="file"
+                                               accept="image/*"
+                                               name="p_image"
+                                               class="form-control-file" id="exampleFormControlFile2">
+                                        <br>
+                                            <button class="btn btn-danger delete" id="deletePhoto" type="button" onclick="delPhoto()">Удалить фото</button>
+									</div>
+                                </div>
+                            </div>
+                           <div class="row">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-group">
+										<label for="last_name">Подзаголовок</label>
+										<input type="text" class="form-control"
+                                               name="sub_title"
+                                               value="{{ blog.subtitle }}"
+                                               id="last_name" placeholder="Подзаголовок">
+									</div>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6">
+									<div class="form-group">
+										<label for="comment">Описание</label>
+										<textarea class="form-control" id="comment" rows="5" name="sub_description">
+                                            {{ blog.sub_description }}
+										</textarea>
+									</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Категория</label>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="category" required>
+                                            <option value="{{ blog.category.id }}" selected>{{ blog.category }}</option>
+                                            {% for c in category_list %}
+                                                {% if c.id !=  blog.category.id %}
+                                                    <option value="{{ c.id }}" >{{ c.name }}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                    </select>
+                            </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect11">Статус</label>
+                                        <select class="form-control" id="exampleFormControlSelect11" name="status">
+                                            <option value="">------</option>
+                                            {% if blog.status.id %}
+                                                <option value="{{ blog.status.id }}" selected>{{ blog.status }}</option>
+                                            {%  endif %}
+                                            {% for c in status_list %}
+                                                {% if blog.status.id != none %}
+                                                    {% if c.id !=  blog.status.id %}
+                                                        <option value="{{ c.id }}" >{{ c.name }}</option>
+                                                    {%  endif %}
+                                                 {% else %}
+                                                    <option value="{{ c.id }}" >{{ c.name }}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                    </select>
+                            </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect12">Тип</label>
+                                        <select class="form-control" id="exampleFormControlSelect12" name="type" required>
+                                           <option value="{{ blog.type.id }}" selected>{{ blog.type }}</option>
+                                            {% for c in type_list %}
+                                                {% if c.id !=  blog.type.id %}
+                                                    <option value="{{ c.id }}" >{{ c.name }}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                    </select>
+                            </div>
+                                </div>
+                            </div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-success">Сохранить</button>
+							<button class="btn btn-danger">Отмена</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+<style>
+</style>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="/static/assets/js/setting-demo2.js"></script>
+<script>
+
+exampleFormControlFile2.onchange = evt => {
+  const [file] = exampleFormControlFile2.files
+  if (file) {
+    blah1.src = URL.createObjectURL(file)
+    document.getElementById("deletePhoto").classList.add("active");
+  }else{
+      blah.src = "#"
+      document.getElementById("deletePhoto").classList.remove("active");
+  }
+}
+function delPhoto() {
+    exampleFormControlFile2.files = null
+    blah1.src = "#"
+}
+</script>
+{% endblock javascripts %}	

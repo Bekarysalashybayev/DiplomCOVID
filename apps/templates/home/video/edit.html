@@ -1,0 +1,132 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Товары {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+	<div class="content">
+		<div class="page-inner">
+			<div class="page-header">
+				<h4 class="page-title">Видео</h4>
+				<ul class="breadcrumbs">
+					<li class="nav-home">
+						<a href="#">
+							<i class="flaticon-home"></i>
+						</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Видео</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Добавить</a>
+					</li>
+				</ul>
+			</div>
+            {% if error %}
+                 <div class="alert alert-danger" role="alert" style="    background-color: #F25961; color: #1a2035;">
+                      {{ error }}
+                 </div>
+            {% endif %}
+			<form class="row" method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Данные</div>
+						</div>
+						<div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-group">
+										<label for="last_name">Название</label>
+										<input type="text" class="form-control"
+                                               name="name"
+                                               value="{{ video.name }}"
+                                               id="last_name" placeholder="Название" required>
+									</div>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-group">
+										<label for="last_name">URL</label>
+										<input type="text" class="form-control"
+                                               name="link"
+                                               value="{{ video.link }}"
+                                               id="last_name" placeholder="URL" required>
+									</div>
+                                </div>
+                            </div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-success">Добавить</button>
+							<button class="btn btn-danger">Отмена</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+<style>
+    button.delete{
+        display: none;
+    }
+    button.delete.active{
+        display: block;
+    }
+    #previewPhoto{
+        display: none;
+    }
+    #previewPhoto.active{
+        display: block;
+    }
+</style>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="/static/assets/js/setting-demo2.js"></script>
+<script>
+b_width.oninput = evt => {
+    document.getElementById("price").innerHTML = b_weight.value*b_height.value*b_width.value*b_length.value
+}
+b_height.oninput = evt => {
+    document.getElementById("price").innerHTML = b_weight.value*b_height.value*b_width.value*b_length.value
+}
+b_weight.oninput = evt => {
+    document.getElementById("price").innerHTML = b_weight.value*b_height.value*b_width.value*b_length.value
+}
+b_length.oninput = evt => {
+    document.getElementById("price").innerHTML = b_weight.value*b_height.value*b_width.value*b_length.value
+}
+exampleFormControlFile1.onchange = evt => {
+  const [file] = exampleFormControlFile1.files
+  if (file) {
+    blah.src = URL.createObjectURL(file)
+    document.getElementById("deletePhoto").classList.add("active");
+    document.getElementById("previewPhoto").classList.add("active");
+  }else{
+      blah.src = "#"
+      document.getElementById("previewPhoto").classList.remove("active");
+      document.getElementById("deletePhoto").classList.remove("active");
+  }
+}
+function delPhoto() {
+    exampleFormControlFile1.files = null
+    blah.src = "#"
+    document.getElementById("deletePhoto").classList.remove("active");
+    document.getElementById("previewPhoto").classList.remove("active");
+}
+</script>
+{% endblock javascripts %}	

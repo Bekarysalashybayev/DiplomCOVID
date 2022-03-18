@@ -1,0 +1,37 @@
+       {% extends "site/layouts/base.html" %}
+
+{% block title %}  {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+        <!-- Category News Start-->
+        <div class="cat-news m-5">
+            <div class="container">
+                <h2>Видео</h2>
+                <div class="row">
+                    {% for l in list %}
+                        <div class="col-md-6 col-12">
+                       <iframe
+                               height="365"
+                               class="w-100"
+                               src="{{ l.link }}"
+                               title="YouTube video player" frameborder="0"
+                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                               allowfullscreen></iframe>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Category News End-->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

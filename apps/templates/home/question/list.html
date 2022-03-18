@@ -1,0 +1,163 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Новости {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+	<div class="content">
+		<div class="page-inner">
+			<div class="page-header">
+				<h4 class="page-title">Вопросы и Ответы</h4>
+				<ul class="breadcrumbs">
+					<li class="nav-home">
+						<a href="/">
+							<i class="flaticon-home"></i>
+						</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Вопросы и Ответы</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Список</a>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="d-flex align-items-center">
+								<h4 class="card-title">Список</h4>
+                                <a href="{% url 'qa-add' %}" class="btn btn-primary btn-round ml-auto">
+                                    <i class="fa fa-plus"></i>
+                                    Добавить
+                                 </a>
+							</div>
+						</div>
+						<div class="card-body">
+							<!-- Modal -->
+							<div class="table-responsive">
+								<table id="add-row" class="display table table-striped table-hover" >
+									<thead>
+										<tr>
+											<th>Вопрос</th>
+											<th>Ответ</th>
+											<th>#</th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+											<th>Вопрос</th>
+											<th>Ответ</th>
+											<th></th>
+										</tr>
+									</tfoot>
+									<tbody>
+                                    {% for l in list %}
+										<tr>
+											<td class="">{{ l.question }}</td>
+											<td><span class="text-question">{{ l.answer }}</span> </td>
+                                            <td>
+                                                <div class="form-button-action">
+													<a type="button" href="qa/{{ l.id }}"
+                                                            data-toggle="tooltip" title=""
+                                                            class="btn btn-link btn-primary btn-lg"
+                                                            data-original-title="Edit Task">
+														<i class="fa fa-edit"></i>
+													</a>
+													<a href="qa/{{ l.id }}/delete" type="button"
+                                                            data-toggle="tooltip"
+                                                            title=""
+                                                            class="btn btn-link btn-danger"
+                                                            data-original-title="Remove"
+                                                    >
+														<i class="fa fa-times"></i>
+													</a>
+												</div>
+                                            </td>
+										</tr>
+                                    {% endfor %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <style>
+    .text-question{
+        display: -webkit-box;
+        max-width: 400px;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    </style>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="/static/assets/js/setting-demo2.js"></script>
+	<script >
+		$(document).ready(function() {
+			$('#basic-datatables').DataTable({
+			});
+
+			$('#multi-filter-select').DataTable( {
+				"pageLength": 5,
+				initComplete: function () {
+					this.api().columns().every( function () {
+						var column = this;
+						var select = $('<select class="form-control"><option value=""></option></select>')
+						.appendTo( $(column.footer()).empty() )
+						.on( 'change', function () {
+							var val = $.fn.dataTable.util.escapeRegex(
+								$(this).val()
+								);
+
+							column
+							.search( val ? '^'+val+'$' : '', true, false )
+							.draw();
+						} );
+
+						column.data().unique().sort().each( function ( d, j ) {
+							select.append( '<option value="'+d+'">'+d+'</option>' )
+						} );
+					} );
+				}
+			});
+
+			// Add Row
+			$('#add-row').DataTable({
+				"pageLength": 5,
+			});
+
+			var action = '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+
+			$('#addRowButton').click(function() {
+				$('#add-row').dataTable().fnAddData([
+					$("#addName").val(),
+					$("#addPosition").val(),
+					$("#addOffice").val(),
+					action
+					]);
+				$('#addRowModal').modal('hide');
+
+			});
+		});
+	</script>
+
+{% endblock javascripts %}
